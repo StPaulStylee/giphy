@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GIPHY!</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+    <script src='scripts/client.js'></script>
+    <link rel='stylesheet' href='css/styles.css' />
+  </head>
+  <body ng-app='giphyApp' ng-controller='MainController as main'>
+    <button ng-click='main.getRandom()'>Random GIPHY</button>
+    <img ng-src='{{ main.random }}' />
+
+    <input ng-model='main.search' />
+    <button type='submit' ng-click='main.getGif()'>Search</button>
+    <p ng-repeat='image in main.results track by $index'><img ng-src='{{ image.images.downsized_large.url }}'  /></p>
+
+</html>
