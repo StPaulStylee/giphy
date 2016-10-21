@@ -5,11 +5,11 @@ function MainController(giphy) {
 
   var main = this;
   console.log('MainController loaded');
-  main.results = [];
+
 main.getRandom = function(){
 giphy.getRandom().then(function(rando) {
          console.log('response from random: ', rando);
-         main.random = rando;
+         main.random = rando.image_url;
        });
      };
 
@@ -20,4 +20,4 @@ giphy.getGif(main.search)
          main.results = results;
        });
      };
-    }
+   }

@@ -21,7 +21,7 @@
 </header>
 <div id='images'>
     <h5>Click on GIFs to expand</h5>
-    <p ng-repeat='image in main.results track by $index'><img ng-src='{{ image.images.downsized_large.url }}'  /></p>
+    <p ng-repeat='image in main.results'><img ng-src='{{ image.images.downsized_large.url }}'  /></p>
     <img id='random' ng-src='{{ main.random }}' />
   </div>
 </html>
